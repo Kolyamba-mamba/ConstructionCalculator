@@ -18,11 +18,12 @@ namespace ConstructionCalculator.Api.Controllers
             if (inputNumbers == null)
                 return BadRequest("The input data is null");
 
-            var h = HelperDeterminationDepthOfTheRetainingWallBelowBottomOfPit
+            var h = DeterminationDepthOfTheRetainingWallBelowBottomOfPitHelper
                 .GetDepthOfSealingOfRetainingWallBelowTheBottomOfPit(inputNumbers);
 
+            var Np = DeterminationForceInTheSpacerHelper.GetForceInTheSpacer(inputNumbers, h);
 
-            return Ok(h);
+            return Ok(Np);
         }
     }
 }
