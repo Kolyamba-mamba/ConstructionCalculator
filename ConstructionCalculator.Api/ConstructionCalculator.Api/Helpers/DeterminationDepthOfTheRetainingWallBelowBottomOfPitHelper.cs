@@ -6,12 +6,12 @@ namespace ConstructionCalculator.Api.Helpers
     /// <summary>
     /// Хелпер вычислений глубины заделки подпорной стены ниже дна котлована
     /// </summary>
-    public class HelperDeterminationDepthOfTheRetainingWallBelowBottomOfPit
+    public class DeterminationDepthOfTheRetainingWallBelowBottomOfPitHelper
     {
         /// <summary>
         /// Определение глубины заделки подпорной стены ниже дна котлована
         /// </summary>
-        /// <param name="input">Павраметры для расчетов глубины заделки подпорной стены ниже дна котлована</param>
+        /// <param name="input">Параметры для расчетов глубины заделки подпорной стены ниже дна котлована</param>
         /// <returns>Глубина заделки подпорной стены ниже дна котлована</returns>
         public static double GetDepthOfSealingOfRetainingWallBelowTheBottomOfPit(InputNumbersDto input)
         {
@@ -27,7 +27,7 @@ namespace ConstructionCalculator.Api.Helpers
             var Hq = input.bf / (Math.Tan(teta * (Math.PI / 180)));
 
             //Определяем равнодействующую бокового давления, возникающую от фундамента № 1
-            var Eq = input.q * Hq * ((Math.Tan(teta * (Math.PI / 180))) * (Math.Tan(teta * (Math.PI / 180))));
+            var Eq = DeterminationPressureHelper.CalculateSidePressure(input, Hq);
 
             //Расстояние от поверхности земли до начала эпюры бокового давления от фундамента здания №1(пригрузка q) на подпорную стенку
             var hq = input.d1 + (input.L1 - (input.bf / 2)) / (Math.Tan(teta * (Math.PI / 180)));
