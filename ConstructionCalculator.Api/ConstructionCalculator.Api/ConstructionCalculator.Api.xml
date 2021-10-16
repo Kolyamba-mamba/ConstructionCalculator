@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ConstructionCalculator.Api</name>
+    </assembly>
+    <members>
+        <member name="T:ConstructionCalculator.Api.Helpers.DeterminationDepthOfTheRetainingWallBelowBottomOfPitHelper">
+            <summary>
+            Хелпер вычислений глубины заделки подпорной стены ниже дна котлована
+            </summary>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Helpers.DeterminationDepthOfTheRetainingWallBelowBottomOfPitHelper.GetDepthOfSealingOfRetainingWallBelowTheBottomOfPit(ConstructionCalculator.Api.Models.DTO.InputNumbersDto)">
+            <summary>
+            Определение глубины заделки подпорной стены ниже дна котлована
+            </summary>
+            <param name="input">Параметры для расчетов глубины заделки подпорной стены ниже дна котлована</param>
+            <returns>Глубина заделки подпорной стены ниже дна котлована</returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Helpers.DeterminationDepthOfTheRetainingWallBelowBottomOfPitHelper.GetEaParams(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Определение равнодействующей активного давления грунта на подпорную стенку
+            </summary>
+            <param name="gamma">Удельный вес грунта</param>
+            <param name="teta">Угол к вертикали воздействия нагрузки на стенку</param>
+            <param name="H">Глубина подземного сооружения</param>
+            <param name="C">Удельное сцепление грунта</param>
+            <param name="hc">Координата точки начала эпюры активного давления грунта</param>
+            <returns>Параметры квадратного уравнения равнодействующей активного давления грунта на подпорную стенку</returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Helpers.DeterminationDepthOfTheRetainingWallBelowBottomOfPitHelper.GetRaParams(System.Double,System.Double)">
+            <summary>
+            Определение расстояния от равнодействующей активного давления грунта Е0 до точки 0
+            </summary>
+            <param name="H">Глубина подземного сооружения</param>
+            <param name="hc">Координата точки начала эпюры активного давления грунта</param>
+            <returns>Параметры уравнения расстояния от равнодействующей активного давления грунта Е0 до точки 0</returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Helpers.DeterminationDepthOfTheRetainingWallBelowBottomOfPitHelper.GetEprpParams(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Определение равнодействующей пассивного давления грунта на подпорную стенку
+            </summary>
+            <param name="gamma">Удельный вес грунта</param>
+            <param name="fi1">Угол внутреннего трения</param>
+            <param name="H">Глубина подземного сооружения</param>
+            <param name="C">Удельное сцепление грунта</param>
+            <param name="hc">Координата точки начала эпюры активного давления грунта</param>
+            <returns>Параметры кубического уравнения равнодействующей пассивного давления грунта на подпорную стенку</returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Helpers.DeterminationDepthOfTheRetainingWallBelowBottomOfPitHelper.Kardano(System.Double,System.Double,System.Double,System.Double,System.Int32@,System.Double@,System.Double@,System.Double@)">
+            <summary>
+            Решение кубического уравнения (ax3 + bx2 + cx + d = 0) по формуле Кардано
+            </summary>
+            <param name="a">Коэффициент a</param>
+            <param name="b">Коэффициент b</param>
+            <param name="c">Коэффициент c</param>
+            <param name="d">Коэффициент d</param>
+            <param name="tip">Тип корней</param>
+            <param name="p1">Корень 1</param>
+            <param name="p2">Корень 2</param>
+            <param name="p3">Корень 3</param>
+            <returns>Параметры кубического уравнения равнодействующей пассивного давления грунта на подпорную стенку</returns>
+        </member>
+        <member name="T:ConstructionCalculator.Api.Helpers.DeterminationForceInTheSpacerHelper">
+            <summary>
+            Хелпер вычислений усилия в распорке
+            </summary>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Helpers.DeterminationForceInTheSpacerHelper.GetForceInTheSpacer(ConstructionCalculator.Api.Models.DTO.InputNumbersDto,System.Double)">
+            <summary>
+            Вычисление усилия в распорке
+            </summary>
+            <param name="input">Параметры для расчетов</param>
+            <param name="h">Глубина заделки подпорной стены ниже дна котлована</param>
+            <returns>Усилия в распорке</returns>
+        </member>
+        <member name="T:ConstructionCalculator.Api.Helpers.DeterminationPressureHelper">
+            <summary>
+            Хелпер вычислений равнодействующих
+            </summary>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Helpers.DeterminationPressureHelper.CalculateActivePressure(ConstructionCalculator.Api.Models.DTO.InputNumbersDto,System.Double)">
+            <summary>
+            Вычисление равнодействующей активного давления грунта на подпорную стенку
+            </summary>
+            <param name="input">Параметры для расчетов</param>
+            <param name="h">Глубина заделки подпорной стены ниже дна котлована</param>
+            <returns>Равнодействующая активного давления грунта на подпорную стенку</returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Helpers.DeterminationPressureHelper.CalculateSidePressure(ConstructionCalculator.Api.Models.DTO.InputNumbersDto)">
+            <summary>
+            Вычисление равнодействующей бокового давления
+            </summary>
+            <param name="input">Параметры для расчетов глубины заделки подпорной стены ниже дна котлована</param>
+            <param name="h">Глубина заделки подпорной стены ниже дна котлована</param>
+            <returns>Равнодействующая бокового давления</returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Helpers.DeterminationPressureHelper.CalculateSidePressure(ConstructionCalculator.Api.Models.DTO.InputNumbersDto,System.Double)">
+            <summary>
+            Вычисление равнодействующей бокового давления
+            </summary>
+            <param name="input">Параметры для расчетов глубины заделки подпорной стены ниже дна котлована</param>
+            <param name="Hq">Проекция ширины фундамента здания</param>
+            <returns>Равнодействующая бокового давления</returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Helpers.DeterminationPressureHelper.CalculatePassivePressure(ConstructionCalculator.Api.Models.DTO.InputNumbersDto,System.Double)">
+            <summary>
+            Вычисление равнодействующей пассивного давления грунта на подпорную стенку
+            </summary>
+            <param name="input">Параметры для расчетов</param>
+            <param name="h">Глубина заделки подпорной стены ниже дна котлована</param>
+            <returns>Равнодействующая пассивного давления грунта на подпорную стенку</returns>
+        </member>
+    </members>
+</doc>
