@@ -25,5 +25,33 @@ namespace ConstructionCalculator.Api.Controllers
 
             return Ok(Np);
         }
+
+        [Route("calculatedepatwall")]
+        [HttpPost]
+        public async Task<IActionResult> CalculateDepthWall([FromBody] InputNumbersDto inputNumbers)
+        {
+            if (inputNumbers == null)
+                return BadRequest("The input data is null");
+
+            var h = DeterminationDepthOfTheRetainingWallBelowBottomOfPitHelper
+                .GetDepthOfSealingOfRetainingWallBelowTheBottomOfPit(inputNumbers);
+
+            return Ok(h);
+        }
+
+        [Route("calculateforceinthespacer")]
+        [HttpPost]
+        public async Task<IActionResult> CalculateForceInTheSpacer([FromBody] InputNumbersDto inputNumbers)
+        {
+            if (inputNumbers == null)
+                return BadRequest("The input data is null");
+
+            var h = DeterminationDepthOfTheRetainingWallBelowBottomOfPitHelper
+                .GetDepthOfSealingOfRetainingWallBelowTheBottomOfPit(inputNumbers);
+
+            var Np = DeterminationForceInTheSpacerHelper.GetForceInTheSpacer(inputNumbers, h);
+
+            return Ok(Np);
+        }
     }
 }
