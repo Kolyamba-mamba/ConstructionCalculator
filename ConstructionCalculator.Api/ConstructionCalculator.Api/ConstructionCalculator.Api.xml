@@ -4,6 +4,34 @@
         <name>ConstructionCalculator.Api</name>
     </assembly>
     <members>
+        <member name="M:ConstructionCalculator.Api.Controllers.CalculateController.CalculateWall(ConstructionCalculator.Api.Models.DTO.InputNumbersDto)">
+            <summary>
+            Роут расчета сетны в грунте с распоркой
+            </summary>
+            <param name="inputNumbers">Параметры для расчетов</param>
+            <returns>Результат расчетов стены в грунте</returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Controllers.CalculateController.CalculateDepthWall(ConstructionCalculator.Api.Models.DTO.InputNumbersDto)">
+            <summary>
+            Роут определения глубины заделки подпорной стены ниже дна котлована
+            </summary>
+            <param name="inputNumbers">Параметры для расчетов глубины заделки подпорной стены ниже дна котлована</param>
+            <returns>Глубина заделки подпорной стены ниже дна котлована</returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Controllers.CalculateController.CalculateForceInTheSpacer(ConstructionCalculator.Api.Models.DTO.InputNumbersDto)">
+            <summary>
+            Роут вычисления усилия в распорке
+            </summary>
+            <param name="inputNumbers">Параметры для расчетов</param>
+            <returns>Усилие в распорке</returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Controllers.CalculateController.CalculateMomentAndSquareArmature(ConstructionCalculator.Api.Models.DTO.InputNumbersDto)">
+            <summary>
+            Роут определения площади поперечного сечения арматуры
+            </summary>
+            <param name="inputNumbers">Параметры для расчетов</param>
+            <returns>Глубина заделки подпорной стены ниже дна котлована</returns>
+        </member>
         <member name="T:ConstructionCalculator.Api.Helpers.DeterminationDepthOfTheRetainingWallBelowBottomOfPitHelper">
             <summary>
             Хелпер вычислений глубины заделки подпорной стены ниже дна котлована
@@ -109,6 +137,20 @@
             <param name="input">Параметры для расчетов</param>
             <param name="h">Глубина заделки подпорной стены ниже дна котлована</param>
             <returns>Равнодействующая пассивного давления грунта на подпорную стенку</returns>
+        </member>
+        <member name="T:ConstructionCalculator.Api.Helpers.DeterminationSquareHelper">
+            <summary>
+            Хелпер вычислений толщины стены в грунте и площади поперечного сечения продольной рабочей арматуры
+            </summary>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Helpers.DeterminationSquareHelper.GetMomentAndSquare(ConstructionCalculator.Api.Models.DTO.InputNumbersDto,System.Double,System.Double)">
+            <summary>
+            Определение максимального значение изгибающего момента в стенке и площади поперечного сечения
+            </summary>
+            <param name="inputNumbers">Параметры для расчетов</param>
+            <param name="h">Глубина заделки подпорной стены</param>
+            <param name="Np">Усилие в распорке</param>
+            <returns></returns>
         </member>
     </members>
 </doc>

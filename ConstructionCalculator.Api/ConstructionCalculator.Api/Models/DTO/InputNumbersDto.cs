@@ -20,8 +20,11 @@
         //Мощность слоя
         public double Power { get; set; }
         //Характеристики грунта
+        //удельный вес грунта
         public double gamma2 { get; set; }
+        //удельное сцепление
         public double c2 { get; set; }
+        // угол внутреннего трения
         public double fi2 { get; set; }
     }
 }
