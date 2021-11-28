@@ -1,4 +1,9 @@
+using ConstructionCalculator.Api.Helpers;
 using ConstructionCalculator.Api.Helpers.DatabaseHelpers;
+using ConstructionCalculator.Api.Mapping;
+using ConstructionCalculator.Api.Models;
+using ConstructionCalculator.Api.Repositories;
+using ConstructionCalculator.Api.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +28,10 @@ namespace ConstructionCalculator.Api
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection));
             services.AddControllers();
+            services.AddSingleton<AutomapperConfigurationStorage>();
+            services.AddScoped<IIdentityService, IdentityService>();
+            services.AddTransient<IAutomapperHelper, AutomapperHelper>();
+            services.AddTransient<IRepository<User>, EntityRepository<User>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
