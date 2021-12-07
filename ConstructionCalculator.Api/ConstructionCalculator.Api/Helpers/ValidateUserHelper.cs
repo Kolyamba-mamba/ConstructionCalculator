@@ -1,13 +1,16 @@
 ﻿using ConstructionCalculator.Api.Models.DTO;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ConstructionCalculator.Api.Helpers
 {
     public class ValidateUserHelper
     {
+        /// <summary>
+        /// Проверка параметров дто для регистрации
+        /// </summary>
+        /// <param name="user">Сущность для регистрации</param>
+        /// <returns>Текст ошибки</returns>
         public string ValidateRegistrationParams(UserRegistrationDto user)
         {
             var errorList = new List<string>();
@@ -25,7 +28,11 @@ namespace ConstructionCalculator.Api.Helpers
             else
                 return null;
         }
-
+        /// <summary>
+        /// Проверка параметров дто для авторизации
+        /// </summary>
+        /// <param name="user">Сущность для авторизации</param>
+        /// <returns>Текст ошибки</returns>
         public string ValidateLoginParams(LoginDto user) 
         {
             var errorList = new List<string>();

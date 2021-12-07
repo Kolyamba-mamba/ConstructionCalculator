@@ -32,6 +32,48 @@
             <param name="inputNumbers">Параметры для расчетов</param>
             <returns>Глубина заделки подпорной стены ниже дна котлована</returns>
         </member>
+        <member name="M:ConstructionCalculator.Api.Controllers.CalculateController.ShowCalculateHistory">
+            <summary>
+            Роут для показа истории расчетов пользователя
+            </summary>
+            <param></param>
+            <returns>История расчетов</returns>
+        </member>
+        <member name="T:ConstructionCalculator.Api.Controllers.UserController">
+            <summary>
+            Контроллер для работы с пользователем
+            </summary>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Controllers.UserController.GetUsers">
+            <summary>
+            Получение списка пользователей
+            </summary>
+            <returns>Пользователи</returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Controllers.UserController.UserRegistration(ConstructionCalculator.Api.Models.DTO.UserRegistrationDto)">
+            <summary>
+            Регистрация
+            </summary>
+            <param name="user">Сущность для регистрации</param>
+            <returns>Статус запроса</returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Controllers.UserController.Login(ConstructionCalculator.Api.Models.DTO.LoginDto)">
+            <summary>
+            Авторизация
+            </summary>
+            <param name="user">Сущность для авторизации</param>
+            <returns>Статус запроса и токен</returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Helpers.AutomapperHelper.InitializeAutomapper">
+            <summary>
+            Инициализация автомаппера
+            </summary>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Helpers.AutomapperHelper.GetAutomapper">
+            <summary>
+            Получение автомаппера
+            </summary>
+        </member>
         <member name="T:ConstructionCalculator.Api.Helpers.DeterminationDepthOfTheRetainingWallBelowBottomOfPitHelper">
             <summary>
             Хелпер вычислений глубины заделки подпорной стены ниже дна котлована
@@ -151,6 +193,237 @@
             <param name="h">Глубина заделки подпорной стены</param>
             <param name="Np">Усилие в распорке</param>
             <returns></returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Helpers.SampleData.Initialize(ConstructionCalculator.Api.Helpers.DatabaseHelpers.ApplicationContext)">
+            <summary>
+            Добавление дефолтных пользователей
+            </summary>
+            <param name="context">Контекст</param>
+            <returns></returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Helpers.StringHelper.IsNullOrEmptyString(System.String)">
+            <summary>
+            Проверка на пустоту строки
+            </summary>
+            <param name="str">Проверяемая строка</param>
+            <returns>Флаг пустоты строки</returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Helpers.ValidateInputDataHelper.ValidateInputData(ConstructionCalculator.Api.Models.DTO.InputNumbersDto)">
+            <summary>
+            Проверка параметров дто для расчетов
+            </summary>
+            <param name="inputNumber">Входные параметры для расчетов</param>
+            <returns>Текст ошибки</returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Helpers.ValidateUserHelper.ValidateRegistrationParams(ConstructionCalculator.Api.Models.DTO.UserRegistrationDto)">
+            <summary>
+            Проверка параметров дто для регистрации
+            </summary>
+            <param name="user">Сущность для регистрации</param>
+            <returns>Текст ошибки</returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Helpers.ValidateUserHelper.ValidateLoginParams(ConstructionCalculator.Api.Models.DTO.LoginDto)">
+            <summary>
+            Проверка параметров дто для авторизации
+            </summary>
+            <param name="user">Сущность для авторизации</param>
+            <returns>Текст ошибки</returns>
+        </member>
+        <member name="T:ConstructionCalculator.Api.Mapping.AutomapperConfigurationStorage">
+            <summary>
+            Класс регистрации конфигураций мапперов
+            </summary>
+        </member>
+        <member name="T:ConstructionCalculator.Api.Mapping.CalculateEntityAutomapperConfiguration">
+            <summary>
+            Класс конфигурации маппинга модели расчетов на дто расчетов
+            </summary>
+        </member>
+        <member name="T:ConstructionCalculator.Api.Mapping.RegistrationAutomapperConfiguration">
+            <summary>
+            Класс конфигурации маппинга модели регистрации на сущность пользователя
+            </summary>
+        </member>
+        <member name="T:ConstructionCalculator.Api.Models.AuthResult">
+            <summary>
+            Результат авторизации
+            </summary>
+        </member>
+        <member name="P:ConstructionCalculator.Api.Models.AuthResult.IsSuccess">
+            <summary>
+            Флаг успешности
+            </summary>
+        </member>
+        <member name="P:ConstructionCalculator.Api.Models.AuthResult.Token">
+            <summary>
+            Токен
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.CalculateEntity.Id" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.CalculateEntity.User" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.CalculateEntity.H" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.CalculateEntity.B" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.CalculateEntity.S" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.CalculateEntity.d1" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.CalculateEntity.bf" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.CalculateEntity.q" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.CalculateEntity.L1" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.CalculateEntity.Power" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.CalculateEntity.gamma2" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.CalculateEntity.c2" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.CalculateEntity.fi2" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.CalculateEntity.h_result" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.CalculateEntity.Np" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.CalculateEntity.Mmax" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.CalculateEntity.As" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.CalculateEntityDto.H" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.CalculateEntityDto.B" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.CalculateEntityDto.S" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.CalculateEntityDto.d1" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.CalculateEntityDto.bf" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.CalculateEntityDto.q" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.CalculateEntityDto.L1" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.CalculateEntityDto.Power" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.CalculateEntityDto.gamma2" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.CalculateEntityDto.c2" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.CalculateEntityDto.fi2" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.CalculateEntityDto.h_result" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.CalculateEntityDto.Np" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.CalculateEntityDto.Mmax" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.CalculateEntityDto.As" -->
+        <member name="T:ConstructionCalculator.Api.Models.DTO.CalculateResultDto">
+            <summary>
+            Результат расчетов
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.CalculateResultDto.h" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.CalculateResultDto.Np" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.CalculateResultDto.Mmax" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.CalculateResultDto.As" -->
+        <!-- Badly formed XML comment ignored for member "M:ConstructionCalculator.Api.Models.DTO.CalculateResultDto.#ctor(System.Double,System.Double,System.Double,System.Double)" -->
+        <member name="T:ConstructionCalculator.Api.Models.DTO.InputNumbersDto">
+            <summary>
+            Дто входящих для расчетов параметров
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.InputNumbersDto.H" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.InputNumbersDto.B" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.InputNumbersDto.S" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.InputNumbersDto.d1" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.InputNumbersDto.bf" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.InputNumbersDto.q" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.InputNumbersDto.L1" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.InputNumbersDto.Power" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.InputNumbersDto.gamma2" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.InputNumbersDto.c2" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.InputNumbersDto.fi2" -->
+        <member name="T:ConstructionCalculator.Api.Models.DTO.LoginDto">
+            <summary>
+            Дто авторизации
+            </summary>
+        </member>
+        <member name="P:ConstructionCalculator.Api.Models.DTO.LoginDto.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:ConstructionCalculator.Api.Models.DTO.LoginDto.Password">
+            <summary>
+            Пароль
+            </summary>
+        </member>
+        <member name="T:ConstructionCalculator.Api.Models.DTO.UserRegistrationDto">
+            <summary>
+            Дто регистрации
+            </summary>
+        </member>
+        <member name="P:ConstructionCalculator.Api.Models.DTO.UserRegistrationDto.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:ConstructionCalculator.Api.Models.DTO.UserRegistrationDto.Password">
+            <summary>
+            Пароль
+            </summary>
+        </member>
+        <member name="P:ConstructionCalculator.Api.Models.DTO.UserRegistrationDto.Username">
+            <summary>
+            Имя пользователя
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.WidthAndSquareArmatureDto.Mmax" -->
+        <!-- Badly formed XML comment ignored for member "P:ConstructionCalculator.Api.Models.DTO.WidthAndSquareArmatureDto.Square" -->
+        <member name="M:ConstructionCalculator.Api.AuthOptions.GetSymmetricSecurityKey">
+            <summary>
+            Получение ключа
+            </summary>
+        </member>
+        <member name="T:ConstructionCalculator.Api.Repositories.EntityRepository`1">
+            <summary>
+            Репозиторий для операций над сущностями
+            </summary>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Repositories.EntityRepository`1.#ctor(ConstructionCalculator.Api.Helpers.DatabaseHelpers.ApplicationContext)">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Repositories.EntityRepository`1.Update(`0)">
+            <summary>
+            Обновление
+            </summary>
+            <param name="item">Обновляемая запись</param>
+            <returns></returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Repositories.EntityRepository`1.Create(`0)">
+            <summary>
+            Создание
+            </summary>
+            <param name="item">Создаваемая запись</param>
+            <returns></returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Repositories.EntityRepository`1.Delete(System.Guid)">
+            <summary>
+            Удаление
+            </summary>
+            <param name="id">Идентификатор удаляемой записи</param>
+            <returns></returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Repositories.EntityRepository`1.Get">
+            <summary>
+            Получение списка
+            </summary>
+            <returns>Список записей</returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Repositories.EntityRepository`1.GetById(System.Guid)">
+            <summary>
+            Получение записи по идентификатору
+            </summary>
+            <param name="id">Идентификатор записи</param>
+            <returns></returns>
+        </member>
+        <member name="T:ConstructionCalculator.Api.Services.IdentityService">
+            <summary>
+            Сервис идентификации
+            </summary>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Services.IdentityService.AuthenticationUserAsunc(System.String,System.String,ConstructionCalculator.Api.Repositories.IRepository{ConstructionCalculator.Api.Models.User})">
+            <summary>
+            Авторизация
+            </summary>
+            <param name="login">Логин</param>
+            <param name="password">Пароль</param>
+            <param name="repository">CRUD для БД</param>
+            <returns>Результат авторизации</returns>
+        </member>
+        <member name="M:ConstructionCalculator.Api.Services.IdentityService.GenerateJwtToken(System.String,System.String)">
+            <summary>
+            Генерация jwt токена
+            </summary>
+            <param name="login">Логин</param>
+            <param name="guid">Идентификатор пользователя</param>
+            <returns>Токен</returns>
         </member>
     </members>
 </doc>

@@ -2,6 +2,9 @@
 
 namespace ConstructionCalculator.Api.Mapping
 {
+    /// <summary>
+    /// Класс регистрации конфигураций мапперов
+    /// </summary>
     public class AutomapperConfigurationStorage
     {
         public MapperConfiguration Configuration;

@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace ConstructionCalculator.Api.Controllers
 {
+    /// <summary>
+    /// Контроллер для работы с пользователем
+    /// </summary>
     [Route("[controller]")]
     public class UserController : Controller
     {
@@ -24,6 +27,10 @@ namespace ConstructionCalculator.Api.Controllers
             _identityService = identityService;
         }
 
+        /// <summary>
+        /// Получение списка пользователей
+        /// </summary>
+        /// <returns>Пользователи</returns>
         [Route("getusers")]
         [HttpGet]
         public IActionResult GetUsers()
@@ -31,6 +38,11 @@ namespace ConstructionCalculator.Api.Controllers
             return Ok(_repository.Get());
         }
 
+        /// <summary>
+        /// Регистрация
+        /// </summary>
+        /// <param name="user">Сущность для регистрации</param>
+        /// <returns>Статус запроса</returns>
         [Route("registration")]
         [HttpPost]
         public async Task<IActionResult> UserRegistration([FromBody] UserRegistrationDto user)
@@ -48,6 +60,11 @@ namespace ConstructionCalculator.Api.Controllers
             return Ok("Регистрация прошла успешно.");
         }
 
+        /// <summary>
+        /// Авторизация
+        /// </summary>
+        /// <param name="user">Сущность для авторизации</param>
+        /// <returns>Статус запроса и токен</returns>
         [Route("login")]
         [HttpPost]
         public async Task<IActionResult> Login([FromBody] LoginDto user)

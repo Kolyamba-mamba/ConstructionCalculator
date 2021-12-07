@@ -5,14 +5,23 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace ConstructionCalculator.Api.Services
 {
+    /// <summary>
+    /// Сервис идентификации
+    /// </summary>
     public class IdentityService : IIdentityService
     {
+        /// <summary>
+        /// Авторизация
+        /// </summary>
+        /// <param name="login">Логин</param>
+        /// <param name="password">Пароль</param>
+        /// <param name="repository">CRUD для БД</param>
+        /// <returns>Результат авторизации</returns>
         public async Task<AuthResult> AuthenticationUserAsunc(string login, string password, IRepository<User> repository)
         {
             var authResult = new AuthResult();
@@ -30,6 +39,12 @@ namespace ConstructionCalculator.Api.Services
             return authResult;
         }
 
+        /// <summary>
+        /// Генерация jwt токена
+        /// </summary>
+        /// <param name="login">Логин</param>
+        /// <param name="guid">Идентификатор пользователя</param>
+        /// <returns>Токен</returns>
         private string GenerateJwtToken(string login, string guid)
         {
             var claims = new List<Claim>

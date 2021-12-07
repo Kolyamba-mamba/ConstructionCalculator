@@ -9,6 +9,9 @@ namespace ConstructionCalculator.Api
         public const string AUDIENCE = "MyAuthClient"; // потребитель токена
         const string KEY = "mysupersecret_secretkey!123";   // ключ для шифрации
         public const int LIFETIME = 10; // время жизни токена - 10 минут
+        /// <summary>
+        /// Получение ключа
+        /// </summary>
         public static SymmetricSecurityKey GetSymmetricSecurityKey()
         {
             return new SymmetricSecurityKey(Encoding.ASCII.GetBytes(KEY));

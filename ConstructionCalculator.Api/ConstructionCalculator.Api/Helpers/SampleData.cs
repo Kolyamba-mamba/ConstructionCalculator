@@ -9,6 +9,11 @@ namespace ConstructionCalculator.Api.Helpers
 {
     public class SampleData
     {
+        /// <summary>
+        /// Добавление дефолтных пользователей
+        /// </summary>
+        /// <param name="context">Контекст</param>
+        /// <returns></returns>
         public static void Initialize(ApplicationContext context)
         {
             if (!context.Users.Any())

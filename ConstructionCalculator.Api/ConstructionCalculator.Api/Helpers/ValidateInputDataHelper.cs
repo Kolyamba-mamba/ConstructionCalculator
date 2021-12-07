@@ -6,6 +6,11 @@ namespace ConstructionCalculator.Api.Helpers
 {
     public class ValidateInputDataHelper
     {
+        /// <summary>
+        /// Проверка параметров дто для расчетов
+        /// </summary>
+        /// <param name="inputNumber">Входные параметры для расчетов</param>
+        /// <returns>Текст ошибки</returns>
         public string ValidateInputData(InputNumbersDto inputNumber)
         {
             var errors = new List<string>();

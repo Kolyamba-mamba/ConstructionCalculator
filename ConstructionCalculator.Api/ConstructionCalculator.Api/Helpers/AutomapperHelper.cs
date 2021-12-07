@@ -15,9 +15,15 @@ namespace ConstructionCalculator.Api.Helpers
             _configuration = configuration.Configuration;
             _mapper = InitializeAutomapper();
         }
+        /// <summary>
+        /// Инициализация автомаппера
+        /// </summary>
         public Mapper InitializeAutomapper() =>
             new Mapper(_configuration, _provider.GetService);
 
+        /// <summary>
+        /// Получение автомаппера
+        /// </summary>
         public Mapper GetAutomapper() => _mapper;
     }
 }

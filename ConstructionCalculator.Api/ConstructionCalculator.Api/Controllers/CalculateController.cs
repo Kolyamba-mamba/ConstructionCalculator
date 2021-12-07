@@ -6,17 +6,11 @@ using ConstructionCalculator.Api.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace ConstructionCalculator.Api.Controllers
 {
-
-//    Вообще в результате нам нужно только количество арматуры(но у нас оно всегда 5 будет в данном случае) и диаметр
-//Еще можно выводить h, Np, Mmax, As
-//По этим данным обычно преподы проверяют курсач
-//Т.е.для моего случая самое главное выводить 32
     [Route("[controller]")]
     public class CalculateController : Controller
     {
@@ -145,6 +139,11 @@ namespace ConstructionCalculator.Api.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// Роут для показа истории расчетов пользователя
+        /// </summary>
+        /// <param></param>
+        /// <returns>История расчетов</returns>
         [Authorize]
         [Route("showhistory")]
         [HttpGet]

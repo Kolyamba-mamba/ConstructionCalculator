@@ -3,35 +3,69 @@
     public class CalculateEntityDto
     {
         #region вкодные параметры
-        //Глубина подземного сооружения
+        /// <summary>
+        ///Глубина подземного сооружения
+        /// <summary>
         public double H { get; set; }
-        //Ширина подземного сооружения
+        /// <summary>
+        ///Ширина подземного сооружения
+        /// <summary>
         public double B { get; set; }
-        //Шаг распорок
+        /// <summary>
+        ///Шаг распорок
+        /// <summary>
         public double S { get; set; }
-        //Глубина заложения фундамента здания №1
+        /// <summary>
+        ///Глубина заложения фундамента здания №1
+        /// <summary>
         public double d1 { get; set; }
-        //Ширина подошвы фундамента здания №1
+        /// <summary>
+        ///Ширина подошвы фундамента здания №1
+        /// <summary>
         public double bf { get; set; }
-        //Давление под подошвой фундамента здания №1
+        /// <summary>
+        ///Давление под подошвой фундамента здания №1
+        /// <summary>
         public double q { get; set; }
-        //Расстояние от оси фундамента здания №1 до подпорной стены
+        /// <summary>
+        ///Расстояние от оси фундамента здания №1 до подпорной стены
+        /// <summary>
         public double L1 { get; set; }
         //Вид грунта основания - супесь
-        //Мощность слоя
+        /// <summary>
+        ///Мощность слоя
+        /// <summary>
         public double Power { get; set; }
         //Характеристики грунта
-        //удельный вес грунта
+        /// <summary>
+        ///удельный вес грунта
+        /// <summary>
         public double gamma2 { get; set; }
-        //удельное сцепление
+        /// <summary>
+        ///удельное сцепление
+        /// <summary>
         public double c2 { get; set; }
-        // угол внутреннего трения
+        /// <summary>
+        /// угол внутреннего трения
+        /// <summary>
         public double fi2 { get; set; }
         #endregion
         #region результат вычислений
+        /// <summary>
+        /// Глубина заделки подпорной стенки ниже дна подземного сооружения
+        /// <summary>
         public double h_result { get; set; }
+        /// <summary>
+        /// Усилие в распорке
+        /// <summary>
         public double Np { get; set; }
+        /// <summary>
+        /// Максимальное значение изгибающего момента в стенке
+        /// <summary>
         public double Mmax { get; set; }
+        /// <summary>
+        /// Требуемая площадь сечения поперечной арматуры
+        /// <summary>
         public double As { get; set; }
         #endregion
     }
