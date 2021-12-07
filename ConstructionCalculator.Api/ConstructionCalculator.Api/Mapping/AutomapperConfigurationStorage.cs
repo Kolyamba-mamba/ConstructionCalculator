@@ -11,6 +11,7 @@ namespace ConstructionCalculator.Api.Mapping
             Configuration = new MapperConfiguration(cfg =>
             {
                 new RegistrationAutomapperConfiguration(cfg);
+                new CalculateEntityAutomapperConfiguration(cfg);
             });
         }
     }
